@@ -1,0 +1,37 @@
+/* CSS Reset 消除8px的自带边距
+* {
+	margin: 0;
+	padding: 0;
+}*/
+
+#container {
+    width: 500px;
+}
+
+#header {
+    background-color: #FFA500;
+}
+
+#header h1 {
+    margin-bottom:0;
+}
+
+#menu {
+    background-color: #FFD700;
+    height: 200px;
+    width: 100px;
+    float: left;
+}
+
+#content {
+    background-color: #EEEEEE;
+    height: 200px;
+    width: 400px;
+    float: left;
+}
+
+#footer {
+    background-color: #FFA500;
+    clear: both;
+    text-align: center;
+}
