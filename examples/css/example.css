@@ -1,0 +1,65 @@
+/* CSS Reset 消除8px的自带边距
+* {
+	margin: 0;
+	padding: 0;
+}*/
+
+body {
+    /* 背景定义 */
+    background-color: white  /* 背景颜色 */
+    background-image: url('/github_code/examples/img/background.png')  /* 背景图像 */
+    background-repeat: no-repeat;  /* 图像呈现方式(默认平铺)：repeat-x水平平铺，repeat-y垂直平铺，no-repeat不平铺 */
+    background-position: left top;  /* 背景图像的起始位置 */
+    background-attachment: scroll;  /* 背景图像是否随着页面的其余部分滚动或者固定，默认scroll，fixed为固定 */
+    /* 背景定义简写属性，合并在一起 */
+    background: white url('/github_code/examples/img/background.png') repeat-x;
+}
+
+h1 {
+    /* 文本定义 */
+    color: black;  /* 文本颜色 */
+    text-align: left;  /* 对齐方式：left、right、center、justify */
+    text-decoration: none;  /* 文本修饰(常用于删除链接的下划线)：none、overline、line-through、underline */
+    text-transform: lowercase;  /* 文本转换：capitalize、uppercase、lowercase */
+    text-indent: 10px;  /* 文本缩进 */
+    letter-spacing: 2px;  /* 每个字符之间的空间 */
+    word-spacing: 30px;  /* 每个单词之间的空间 */
+    line-height: 120%;  /* 行与行之间的空间(大多数浏览器的默认行高约为110%~120%) */
+    direction: rtl;  /* 反向输出文本 */
+    white-space: nowrap;  /* 禁用文字环绕(超出边界不换行) */
+    vertical-align: text-bottom;  /* 垂直对齐图像：text-bottom(默认)、text-top */
+    text-shadow: 2px 2px #FF0000;  /* 文本阴影：x y color */
+}
+
+p {
+    /* 字体定义 */
+    font-family: Arial,Helvetica,sans-serif;  /* 字体系列，按顺序加载，加载异常才会加载下一个系列(多个系列用逗号分隔) */
+    font-style: normal;  /* 字体样式：normal、italic */
+    font-size: 30px;  /* 字体大小(默认16像素，16px=1em，设定为100%后会继承body字体大小)：px、em、% 三种方式定义 */
+    font-weight: normal;  /* 字体加粗：normal(默认)、lighter、bold、900(用数字定义) */
+    font-variant: normal;  /* 字体转变：normal(默认)、small-caps(小型大写字母) */
+    /* 字体定义简写属性，合并在一起 */
+    font: 30px Arial,Helvetica;
+}
+
+/* 链接定义
+a:link      未访问链接
+a:visited   已访问链接
+a:hover     鼠标移动到链接上
+a:active    鼠标点击时
+*/
+a:link, a:visited {
+	display: block;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #98bf21;
+	width: 120px;
+	text-align: center;
+	padding: 4px;
+	text-decoration: none;
+}
+
+a:hover, a:active {
+	background-color: #7A991A;
+	font-size:150%;
+}
