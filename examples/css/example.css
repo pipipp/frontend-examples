@@ -58,8 +58,70 @@ a:link, a:visited {
 	padding: 4px;
 	text-decoration: none;
 }
-
 a:hover, a:active {
 	background-color: #7A991A;
 	font-size:150%;
+}
+
+ul {
+    /* 无序列表定义 */
+    list-style-type: circle;  /* 列表项标记：none(移除标记)、circle、square */
+    list-style-image: url('/github_code/examples/img/demo.gif');  /* 列表项标记图像 */
+    list-style-position: inside;  /* 列表项标记位置：outside(默认值)、inside、inherit(继承父元素) */
+    /* 列表定义简写属性，合并在一起 */
+    list-style: circle url('/github_code/examples/img/demo.gif') inside;
+}
+ol {
+    /* 有序列表定义 */
+    list-style-type: upper-roman;  /* 列表项标记：number、upper-roman、lower-alpha */
+    list-style-position: outside;  /* 列表项标记位置：outside(默认值)、inside、inherit(继承父元素) */
+}
+
+table {
+    /* 表格外框定义 */
+    border-collapse: collapse;  /* 折叠边框(设置表格为单边框，默认有双边框) */
+    width: 100%;  /* 外框宽度 */
+}
+caption {
+     /* 标题定义 */
+     caption-side: top;  /* 标题位置(默认top居中)：top、bottom */
+}
+th {
+    /* 表头定义(默认居中和粗体) */
+    border: 1px solid black;  /* 表格边框：px、修饰、颜色 */
+    height: 30px;  /* 标题高度 */
+    background-color: green;  /* 标题背景颜色 */
+    color: white;  /* 标题字体颜色 */
+}
+td {
+    /* 内容定义 */
+    border: 1px solid black;  /* 表格边框：px、修饰、颜色 */
+    height: 20px;  /* 内容高度 */
+    text-align: center;  /* 文本水平对齐：left(默认)、center、right */
+    vertical-align: center;  /* 文本垂直对齐：top、center(默认)、bottom */
+    padding: 3px 7px 2px 7px;  /* 内边距：上 右 下 左 */
+}
+
+/* 盒子模型(设计和布局时使用)
+总元素的宽度 = 宽度 + 左填充 + 右填充 + 左边框 + 右边框 + 左边距 + 右边距
+总元素的高度 = 高度 + 顶部填充 + 底部填充 + 上边框 + 下边框 + 上边距 + 下边距
+*/
+div.base {
+    background-color: lightgrey;  /* 背景颜色 */
+    width: 500px;  /* 宽度 */
+    margin: 20px;  /* 外边距：上 右 下 左 */
+    border: 20px solid green;  /* 边框：px、修饰、颜色 */
+    padding: 10px;  /* 内边距：上 右 下 左 */
+    position: absolute;
+    top: 50px;
+}
+div.layout {
+    background-color: lightgrey;  /* 背景颜色 */
+    width: 500px;  /* 宽度 */
+    margin: 20px;  /* 外边距：上 右 下 左 */
+    border: 20px solid green;  /* 边框：px、修饰、颜色 */
+    padding: 10px;  /* 内边距：上 右 下 左 */
+    position: absolute;
+    top: 50px;
+    left: 600px;
 }
