@@ -1,3 +1,5 @@
+/* CSS Examples */
+
 /* CSS Reset 消除8px的自带边距
 * {
 	margin: 0;
@@ -86,16 +88,20 @@ caption {
      /* 标题定义 */
      caption-side: top;  /* 标题位置(默认top居中)：top、bottom */
 }
+tr.collapse {
+    /* 行定义 */
+    visibility: collapse;  /* 折叠行，不显示内容，也不占空间 */
+}
 th {
     /* 表头定义(默认居中和粗体) */
-    border: 1px solid black;  /* 表格边框：px、修饰、颜色 */
+    border: 1px solid black;  /* 表格边框：px、风格、颜色 */
     height: 30px;  /* 标题高度 */
     background-color: green;  /* 标题背景颜色 */
     color: white;  /* 标题字体颜色 */
 }
 td {
     /* 内容定义 */
-    border: 1px solid black;  /* 表格边框：px、修饰、颜色 */
+    border: 1px solid black;  /* 表格边框：px、风格、颜色 */
     height: 20px;  /* 内容高度 */
     text-align: center;  /* 文本水平对齐：left(默认)、center、right */
     vertical-align: center;  /* 文本垂直对齐：top、center(默认)、bottom */
@@ -110,8 +116,8 @@ div.base {
     background-color: lightgrey;  /* 背景颜色 */
     width: 500px;  /* 宽度 */
     margin: 20px;  /* 外边距：上 右 下 左 */
-    border: 20px solid green;  /* 边框：px、修饰、颜色 */
-    padding: 10px;  /* 内边距：上 右 下 左 */
+    border: 20px solid green;  /* 边框：px、风格、颜色 */
+    padding: 50px;  /* 内边距：上 右 下 左 */
     position: absolute;
     top: 50px;
 }
@@ -119,9 +125,54 @@ div.layout {
     background-color: lightgrey;  /* 背景颜色 */
     width: 500px;  /* 宽度 */
     margin: 20px;  /* 外边距：上 右 下 左 */
-    border: 20px solid green;  /* 边框：px、修饰、颜色 */
-    padding: 10px;  /* 内边距：上 右 下 左 */
+    border: 20px solid green;  /* 边框：px、风格、颜色 */
+    padding: 50px;  /* 内边距：上 右 下 左 */
     position: absolute;
     top: 50px;
-    left: 600px;
+    left: 700px;
+}
+
+div.layout span {
+    /* 边框定义 */
+    border-style: ridge groove solid inset;  /* 边框风格：上 右 下 左 */
+    /* 边框定义简写属性，合并在一起 */
+    border: 5px ridge groove solid inset;
+
+    /* 轮廓定义(不占空间) */
+    outline: green dotted thick;  /* 轮廓：颜色 风格 宽度 */
+}
+
+div.layout p.hidden {
+    /* 显示定义 */
+    visibility: hidden;  /* 隐藏元素，但位置保留(占空间)：visible(默认)、hidden */
+    display: none;  /* none(隐藏元素，位置不保留)、
+                       inline(定义为内联元素)、
+                       block(定义为块级元素)、
+                       inline-block(定义为内联块元素)
+                       table(定义为表格元素) */
+}
+
+div.place {
+    /* 位置定义：static(默认)、
+                fixed(固定位置，不占空间)、
+                relative(相对于元素初始的位置，占空间)、
+                absolute(相对于父元素的位置(如果没有，作用于整个<html>)，不占空间)、
+                sticky(基于用户的滚动位置来定位，占空间) */
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    z-index: 0;  /* 有正数或负数的堆叠顺序(当多个元素重叠在一起时，根据数值大小决定先后显示的顺序，默认后定义的元素覆盖之前的元素) */
+    clip: rect(0px,600px,200px,0px);  /* 裁剪绝对定位的元素外形(超出范围为不裁剪)：上,右,下,左 */
+    overflow: auto;  /* 滚动条(显示元素内溢出的内容): visible(默认)、auto(自适应)、scroll(强制开启滚动条)、hidden(溢出内容隐藏) */
+    cursor: auto;  /* 光标显示：auto(默认)、default、pointer、progress、text、wait */
+}
+
+/* 浮动定义 */
+div.layout img {
+    float: right;  /* 水平方向浮动：none(默认)、left、right、inherit(继承父元素) */
+    width: 200px;
+    height: 200px;
+}
+div.layout span {
+    clear: both;  /* 清除浮动(指定元素两侧不能出现浮动元素)：none(默认)、left、right、both、inherit(继承父元素) */
 }
