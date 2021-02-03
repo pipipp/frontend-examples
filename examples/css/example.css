@@ -9,12 +9,12 @@
 body {
     /* 背景定义 */
     background-color: white  /* 背景颜色 */
-    background-image: url('/github_code/examples/img/background.png')  /* 背景图像 */
+    background-image: url('../img/background.png')  /* 背景图像 */
     background-repeat: no-repeat;  /* 图像呈现方式(默认平铺)：repeat-x水平平铺，repeat-y垂直平铺，no-repeat不平铺 */
     background-position: left top;  /* 背景图像的起始位置 */
     background-attachment: scroll;  /* 背景图像是否随着页面的其余部分滚动或者固定，默认scroll，fixed为固定 */
     /* 背景定义简写属性，合并在一起 */
-    background: white url('/github_code/examples/img/background.png') repeat-x;
+    background: white url('../img/background.png') repeat-x;
 }
 
 h1 {
@@ -68,10 +68,10 @@ a:hover, a:active {
 ul {
     /* 无序列表定义 */
     list-style-type: circle;  /* 列表项标记：none(移除标记)、circle、square */
-    list-style-image: url('/github_code/examples/img/demo.gif');  /* 列表项标记图像 */
+    list-style-image: url('../img/demo.gif');  /* 列表项标记图像 */
     list-style-position: inside;  /* 列表项标记位置：outside(默认值)、inside、inherit(继承父元素) */
     /* 列表定义简写属性，合并在一起 */
-    list-style: circle url('/github_code/examples/img/demo.gif') inside;
+    list-style: circle url('../img/demo.gif') inside;
 }
 ol {
     /* 有序列表定义 */
