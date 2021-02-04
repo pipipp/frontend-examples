@@ -128,10 +128,10 @@ div.layout {
     width: 800px;  /* 宽度 */
     margin: 20px;  /* 外边距：上 右 下 左 */
     border: 20px solid green;  /* 边框：px、风格、颜色 */
-    padding: 50px;  /* 内边距：上 右 下 左 */
+    padding: 30px;  /* 内边距：上 右 下 左 */
     position: absolute;  /* 使用绝对位置 */
     top: 50px;  /* 距离顶部50px */
-    right: 150px;  /* 距离右边150px */
+    right: 180px;  /* 距离右边150px */
 }
 
 div.layout span {
@@ -171,24 +171,24 @@ div.place {
 }
 
 /* 浮动定义(常用于图像) */
-div.layout img {
+div.layout img.pikachu {
     float: right;  /* 水平方向浮动：none(默认)、left、right、inherit(继承父元素) */
     width: 30%;
     height: auto;  /* 自适应高度(根据宽度比例调整) */
     border: 1px solid #ccc;
     margin: 1px;
     position: relative;  /* 使用相对位置 */
-    right: -15px;  /* 距离右边-15px */
+    right: -10px;  /* 距离右边-10px */
 }
-div.layout img:hover {
+div.layout img.pikachu:hover {
     border-color: #777;  /* 当选中图片时，边框变颜色 */
 }
 div.layout span {
     clear: both;  /* 清除浮动(指定元素周围不能出现浮动元素)：none(默认)、left、right、both(两侧)、inherit(继承父元素) */
 }
 
-/* 对齐定义 */
 div.align {
+    /* 对齐定义 */
     margin: auto;  /* 居中对齐(如果没有设置width属性，居中对齐将不起作用) */
     width: 30%;
     border: 3px solid #73AD21;
@@ -196,14 +196,45 @@ div.align {
     text-align: center;
 }
 
-/* 组合选择符
+/* 计数器定义
+content	             使用 ::before 和 ::after 伪元素来插入自动生成的内容
+counter-increment	 递增一个或多个值
+counter-reset	     创建或重置一个或多个计数器
+*/
+div.layout {
+    counter-reset: section;  /* 初始化计数器变量 */
+}
+div.layout h2::before {
+    /* 使用带计数器的段落 */
+    counter-increment: section;  /* 递增变量 */
+    content: "计数值(" counter(section) "): ";  /* 插入变量到生成的内容 */
+}
+div.layout ol {
+    counter-reset: section-li;  /* 初始化计数器变量 */
+    list-style-type: none;
+}
+div.layout ol.only {
+    border: 1px solid green;
+    width: 35%;
+    position: relative;  /* 使用相对位置 */
+    top: -15px;  /* 距离右边-15px */
+}
+div.layout li::before {
+    /* 使用带计数器的列表 */
+    counter-increment: section-li;  /* 递增变量 */
+    /* 使用counters函数插入变量到生成的内容(具有累加功能，reset一次就增加一次累加)
+       使用方法：counters(section,"多次累加变量之间的字符") */
+    content: "计数值(" counters(section-li,".") "): ";
+}
+
+/* 元素组合选择符
 后代选择器         【以空格分隔】            子孙
 子元素选择器       【以大于号 > 分隔】       直接子元素
 相邻兄弟选择器     【以加号 + 分隔】         后续距离最近的一个兄弟元素
 后续兄弟选择器     【以波浪号 ～ 分隔】       后续所有兄弟元素
 */
 
-/* CSS伪类元素(伪类选择元素基于的是当前元素处于的状态，或者说元素当前所具有的特性，而不是元素的id、class、属性等静态的标志)
+/* 伪类元素(伪类元素是基于当前元素处于的状态，或者说元素当前所具有的特性，而不是元素的id、class、属性等静态的标志)
 :link                 a:link                    选择所有未访问链接
 :visited	          a:visited	                选择所有访问过的链接
 :active	              a:active	                选择正在活动的链接
@@ -215,4 +246,13 @@ div.align {
 :before	              p:before	                在每个 <p> 元素之前插入内容
 :after	              p:after	                在每个 <p> 元素之后插入内容
 :lang(language)	      p:lang(it)	            为 <p> 元素的 lang 属性选择一个开始值
+*/
+
+/* 属性选择器(具有特定属性的HTML元素样式)
+attribute属性值【完全等于】value     [title = great]
+attribute属性中【包含】value         [title ~= hello]        属性值包含【独立的完整单词】value
+attribute属性中【包含】value         [title *= flower]       属性值【包含value的字母】就可以
+attribute属性以value【开头】         [lang |= en]            属性值必须是【完整且唯一的单词】
+attribute属性以value【开头】         [lang ^= en]            属性值的【前几个字母】是value就可以
+attribute属性以value【结尾】         a[src $= ".pdf"]        属性值的【后几个字母】是value就可以
 */
