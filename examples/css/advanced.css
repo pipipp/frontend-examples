@@ -1,0 +1,9 @@
+/* CSS Advanced Examples */
+
+/* 响应式布局：小于600px改为上下布局 */
+@media screen and (max-width: 600px) {
+    /* 控制的元素 */
+    .column {
+        width: 100%;
+    }
+}
