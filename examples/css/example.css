@@ -29,7 +29,8 @@ h1 {
     line-height: 120%;  /* 行与行之间的空间(大多数浏览器的默认行高约为110%~120%) */
     direction: rtl;  /* 反向输出文本 */
     white-space: nowrap;  /* 禁用文字环绕(超出边界不换行) */
-    vertical-align: text-bottom;  /* 垂直对齐图像：text-bottom(默认)、text-top */
+    vertical-align: text-bottom;  /* 文本垂直对齐图像：text-bottom(对齐图像底部，默认)、text-top(对齐图像顶部)
+                                     文本垂直对齐：top、center(在table元素内时默认)、bottom */
     text-shadow: 2px 2px #FF0000;  /* 文本阴影：x y color */
 }
 
@@ -123,7 +124,7 @@ div.base {
 }
 div.layout {
     background-color: lightgrey;  /* 背景颜色 */
-    width: 500px;  /* 宽度 */
+    width: 800px;  /* 宽度 */
     margin: 20px;  /* 外边距：上 右 下 左 */
     border: 20px solid green;  /* 边框：px、风格、颜色 */
     padding: 50px;  /* 内边距：上 右 下 左 */
@@ -145,11 +146,12 @@ div.layout span {
 div.layout p.hidden {
     /* 显示定义 */
     visibility: hidden;  /* 隐藏元素，但位置保留(占空间)：visible(默认)、hidden */
-    display: none;  /* none(隐藏元素，位置不保留)、
-                       inline(定义为内联元素)、
-                       block(定义为块级元素)、
-                       inline-block(定义为内联块元素)
-                       table(定义为表格元素) */
+    display: none;  /* none(隐藏元素，位置不保留)
+                       inline(定义为内联元素：在同一行显示、没有宽高等属性)
+                       block(定义为块级元素：独占一行、可以设置宽高等属性)
+                       inline-block(定义为内联块元素：在同一行显示、并且可以设置宽高等属性)
+                       table(定义为表格元素)
+                       list-item(定义为列表元素) */
 }
 
 div.place {
@@ -167,7 +169,7 @@ div.place {
     cursor: auto;  /* 光标显示：auto(默认)、default、pointer、progress、text、wait */
 }
 
-/* 浮动定义 */
+/* 浮动定义(常用于图像) */
 div.layout img {
     float: right;  /* 水平方向浮动：none(默认)、left、right、inherit(继承父元素) */
     width: 200px;
@@ -176,3 +178,33 @@ div.layout img {
 div.layout span {
     clear: both;  /* 清除浮动(指定元素两侧不能出现浮动元素)：none(默认)、left、right、both、inherit(继承父元素) */
 }
+
+/* 对齐定义 */
+div.align {
+    margin: auto;  /* 居中对齐(如果没有设置width属性，居中对齐将不起作用) */
+    width: 30%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+    text-align: center;
+}
+
+/* 组合选择符
+后代选择器         【以空格分隔】            子孙
+子元素选择器       【以大于号 > 分隔】       直接子元素
+相邻兄弟选择器     【以加号 + 分隔】         后续距离最近的一个兄弟元素
+后续兄弟选择器     【以波浪号 ～ 分隔】       后续所有兄弟元素
+*/
+
+/* CSS伪类元素(伪类选择元素基于的是当前元素处于的状态，或者说元素当前所具有的特性，而不是元素的id、class、属性等静态的标志)
+:link                 a:link                    选择所有未访问链接
+:visited	          a:visited	                选择所有访问过的链接
+:active	              a:active	                选择正在活动的链接
+:hover	              a:hover	                把鼠标放在链接上的状态
+:focus	              input:focus	            选择元素输入后具有焦点
+:first-letter   	  p:first-letter	        选择每个 <p> 元素的第一个字母
+:first-line 	      p:first-line	            选择每个 <p> 元素的第一行
+:first-child	      p:first-child	            选择器匹配属于任意元素的第一个子元素的 <p> 元素
+:before	              p:before	                在每个 <p> 元素之前插入内容
+:after	              p:after	                在每个 <p> 元素之后插入内容
+:lang(language)	      p:lang(it)	            为 <p> 元素的 lang 属性选择一个开始值
+*/
