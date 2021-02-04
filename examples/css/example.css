@@ -172,8 +172,8 @@ div.place {
 /* 浮动定义(常用于图像) */
 div.layout img {
     float: right;  /* 水平方向浮动：none(默认)、left、right、inherit(继承父元素) */
-    width: 200px;
-    height: 200px;
+    width: 30%;
+    height: auto;  /* 自适应高度(根据宽度比例调整) */
 }
 div.layout span {
     clear: both;  /* 清除浮动(指定元素两侧不能出现浮动元素)：none(默认)、left、right、both、inherit(继承父元素) */
