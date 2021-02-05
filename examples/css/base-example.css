@@ -9,10 +9,10 @@
 body {
     /* 背景定义 */
     background-color: white  /* 背景颜色 */
-    background-image: url('../img/background.png')  /* 背景图像 */
-    background-repeat: no-repeat;  /* 图像呈现方式(默认平铺)：repeat-x水平平铺，repeat-y垂直平铺，no-repeat不平铺 */
-    background-position: left top;  /* 背景图像的起始位置 */
-    background-attachment: scroll;  /* 背景图像是否随着页面的其余部分滚动或者固定，默认scroll，fixed为固定 */
+    background-image: url('../img/background.png'), url('../img/flower.gif');  /* 背景图像 */
+    background-repeat: repeat-x, no-repeat;  /* 图像呈现方式：repeat(默认)、repeat-x、repeat-y、no-repeat */
+    background-position: left top, right bottom;  /* 背景图像的起始位置 */
+    background-attachment: scroll;  /* 背景图像是否随着页面的其余部分滚动或者固定：scroll(默认)、fixed */
     /* 背景定义简写属性，合并在一起 */
     background: white url('../img/background.png') repeat-x;
 }
@@ -70,14 +70,14 @@ ul {
     /* 无序列表定义 */
     list-style-type: circle;  /* 列表项标记：none(移除标记)、circle、square */
     list-style-image: url('../img/demo.gif');  /* 列表项标记图像 */
-    list-style-position: inside;  /* 列表项标记位置：outside(默认值)、inside、inherit(继承父元素) */
+    list-style-position: inside;  /* 列表项标记位置：outside(默认)、inside、inherit(继承父元素) */
     /* 列表定义简写属性，合并在一起 */
     list-style: circle url('../img/demo.gif') inside;
 }
 ol {
     /* 有序列表定义 */
     list-style-type: upper-roman;  /* 列表项标记：number、upper-roman、lower-alpha */
-    list-style-position: outside;  /* 列表项标记位置：outside(默认值)、inside、inherit(继承父元素) */
+    list-style-position: outside;  /* 列表项标记位置：outside(默认)、inside、inherit(继承父元素) */
 }
 
 table {
@@ -124,7 +124,7 @@ div.base {
     left: 100px;  /* 距离左边100px */
 }
 div.layout {
-    background-color: lightgrey;  /* 背景颜色 */
+    background: lightgrey url('../img/flower.gif') no-repeat bottom right;  /* 背景图像 */
     width: 800px;  /* 宽度 */
     margin: 20px;  /* 外边距：上 右 下 左 */
     border: 20px solid green;  /* 边框：px、风格、颜色 */
@@ -162,8 +162,8 @@ div.place {
                 absolute(相对于父元素的位置(如果没有，作用于整个<html>)，不占空间)、
                 sticky(基于用户的滚动位置来定位，占空间) */
     position: absolute;
-    top: 50px;
-    right: 50px;
+    top: 100px;
+    right: 150px;
     z-index: 0;  /* 有正数或负数的堆叠顺序(当多个元素重叠在一起时，根据数值大小决定先后显示的顺序，默认后定义的元素覆盖之前的元素) */
     clip: rect(0px,600px,200px,0px);  /* 裁剪绝对定位的元素外形(超出范围为不裁剪)：上,右,下,左 */
     overflow: auto;  /* 滚动条(显示元素内溢出的内容): visible(默认)、auto(自适应)、scroll(强制开启滚动条)、hidden(溢出内容隐藏) */
@@ -178,7 +178,8 @@ div.layout img.pikachu {
     border: 1px solid #ccc;
     margin: 1px;
     position: relative;  /* 使用相对位置 */
-    right: -10px;  /* 距离右边-10px */
+    right: 100px;  /* 距离右边100px */
+    top: 30px;  /* 距离顶部30px */
 }
 div.layout img.pikachu:hover {
     border-color: #777;  /* 当选中图片时，边框变颜色 */
