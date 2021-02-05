@@ -1,5 +1,13 @@
 /* CSS Advanced Examples */
 
+
+/* CSS Reset 消除8px的自带边距 */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;  /* CSS3 box-sizing属性可以很好的兼容布局，不会被padding和border破坏 */
+}
+
 /* 响应式布局：小于600px改为上下布局 */
 @media screen and (max-width: 600px) {
     /* 控制的元素 */
