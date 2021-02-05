@@ -6,6 +6,11 @@
 	padding: 0;
 }*/
 
+/* CSS3 box-sizing属性可以很好的兼容布局，不会被padding和border破坏
+* {
+    box-sizing: border-box;
+}*/
+
 body {
     /* 背景定义 */
     background-color: white  /* 背景颜色 */
