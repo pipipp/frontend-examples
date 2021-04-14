@@ -48,7 +48,7 @@
 
 <div class="layout">
     <h1>Layout</h1>
-    <span>带边框和轮廓的内容</span>
+    <span class="showSpan">带边框和轮廓的内容</span>
     <p class="hidden">隐藏</p>
 
     <div class="place">
@@ -81,10 +81,76 @@
         <li>item</li>
     </ol>
 
+    <!--formaction属性可以重写<form>元素的action属性，可用于添加多个表单执行结果-->
+    <!--<input type="submit" formaction="demo_admin.asp" value="Submit as admin">&ndash;&gt;-->
+    <form id="forms" action="" method="post" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Form表单</legend>
+
+            <label for="text1">text:</label>
+            <!--密码字段改为：type="password"-->
+            <input type="text" name="text" value="单行文本区域." id="text1"><br>
+
+            <label for="testarea1">testarea:</label><br>
+            <textarea name="textarea" rows="3" cols="30" id="testarea1">多行文本区域.</textarea><br>
+
+            radio:
+            <input type="radio" name="radio" value="1">1
+            <input type="radio" name="radio" value="2" checked>2
+            <input type="radio" name="radio" value="3">3<br>
+
+            checkbox:
+            <input type="checkbox" name="checkbox" value="11">11
+            <input type="checkbox" name="checkbox" value="22">22
+            <input type="checkbox" name="checkbox" value="33" checked>33<br>
+
+            select:
+            <select name="select">
+                <option value="5">5</option>
+                <option selected value="6">6</option>
+                <option value="7">7</option>
+            </select><br>
+
+            range:
+            <input id="range" type="range" name="range" min="0" max="10" value="6" step="1"
+                   oninput="showRange()" onchange="showRange()">
+            <span id="rangeValue">6</span><br>
+
+            <label for="email1">email:</label>
+            <input type="email" name="email" id="email1" required><br>
+
+            <label for="tel1">telephone:</label>
+            <input type="tel" name="tel" id="tel1" required><br>
+
+            <label for="url1">url:</label>
+            <input type="url" name="homepage" id="url1" required><br>
+
+            uploadFile:
+            <input type="file" name="files" multiple="multiple" accept="image/png,image/gif,image/jpeg"
+                   required="required"><br>
+
+            date:
+            <!--月份：type="month"，星期：type="week"，时间：type="time"，日期时间：type="datetime-local"-->
+            <input id="dates" type="date" name="date"><br>
+
+            <input type="reset" value="Reset">&emsp;
+            <input type="button" onclick="alert('Hello World!')" value="Button">&emsp;
+            <input type="submit" value="Submit">
+        </fieldset>
+    </form>
+
     <div class="align">
         <p>居中对齐的板块</p>
     </div>
 </div>
+
+<script type="text/javascript">
+    document.getElementById('dates').valueAsDate = new Date();
+    function showRange() {
+      var value = document.getElementById('range').value;
+      document.getElementById('rangeValue').innerHTML = value;
+    }
+</script>
 
 </body>
 </html>
