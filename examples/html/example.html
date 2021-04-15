@@ -158,9 +158,9 @@
         }
         //处理日是一位的情况
         if((day + '').length == 1){
-            day = '0' + (day + '')
+            day = '0' + (day + '');
         }
-        var curDay = year + '-' + month + '-' + day + 'T' + hour + ':' + minute
+        var curDay = year + '-' + month + '-' + day + 'T' + hour + ':' + minute;
         document.getElementById('dates').value = curDay;
     }
 
